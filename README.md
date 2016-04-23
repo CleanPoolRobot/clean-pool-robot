@@ -14,6 +14,7 @@ A listagem dos contribuidores do projeto encontra-se aqui.
 
 ## Como Contribuir
 Para entender como contribuir com o projeto e o que é necessário para isso,
-leia o seguinte documento.
+leia o seguinte [documento][how-contribute].
 
 [license]: https://github.com/CleanPoolRobot/cleaner-pool/blob/master/LICENSE.txt
+[how-contribute]: https://github.com/CleanPoolRobot/cleaner-pool/wiki/Como-Contribuir
