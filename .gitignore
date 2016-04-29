@@ -2,8 +2,9 @@
 #
 environment/*.zip
 environment/*.img
+environment/*.tar.gz
 environment/qemu-rpi-kernel
-.swp
+*.swp
 
 # Vagrant
 #

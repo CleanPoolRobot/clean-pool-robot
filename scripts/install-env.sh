@@ -18,12 +18,14 @@ echo -e "${GREEN}Git: DONE"
 
 echo -e "${GREEN}Download Raspbian: starting"
 echo -e "${GREEN}It should take a few minutes..."
-wget https://www.dropbox.com/s/nct30w78kv3m82r/rpi.zip?dl=0 \
+wget https://www.dropbox.com/s/d656yfxpjqlisyu/rpi.tar.gz?dl=0 \
      -P ./environment/ >>/tmp/provision-script.log 2>&1
 
-mv ./environment/rpi.zip?dl=0 ./environment/rpi.zip
-unzip ./environment/rpi.zip -d ./environment/ >>/tmp/provision-script.log 2>&1
-rm ./environment/rpi.zip
+mv ./environment/rpi.tar.gz?dl=0 ./environment/rpi.tar.gz
+tar -zxvf ./environment/rpi.tar.gz -C ./environment/ \
+    >>/tmp/provision-script.log 2>&1
+
+rm ./environment/rpi.tar.gz >>/tmp/provision-script.log 2>&1
 echo -e "${GREEN}Download Raspbian: DONE"
 
 echo -e "${GREEN}Qemu: starting"
@@ -36,7 +38,9 @@ echo -e "${GREEN}It should take a few minutes..."
 wget https://github.com/dhruvvyas90/qemu-rpi-kernel/archive/master.zip \
      -P ./environment/ >>/tmp/provision-script.log 2>&1
 
-unzip ./environment/master.zip -d ./environment/ >>/tmp/provision-script.log 2>&1
+unzip ./environment/master.zip -d ./environment/ \
+      >>/tmp/provision-script.log 2>&1
+
 mv ./environment/qemu-rpi-kernel-master ./environment/qemu-rpi-kernel
-rm master.zip
+rm ./environment/master.zip >>/tmp/provision-script.log 2>&1
 echo -e "${GREEN}Kernel-rpi: DONE${NOCOLOR}"
