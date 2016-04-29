@@ -23,6 +23,7 @@ wget https://www.dropbox.com/s/nct30w78kv3m82r/rpi.zip?dl=0 \
 
 mv ./environment/rpi.zip?dl=0 ./environment/rpi.zip
 unzip ./environment/rpi.zip -d ./environment/ >>/tmp/provision-script.log 2>&1
+rm ./environment/rpi.zip
 echo -e "${GREEN}Download Raspbian: DONE"
 
 echo -e "${GREEN}Qemu: starting"
@@ -37,4 +38,5 @@ wget https://github.com/dhruvvyas90/qemu-rpi-kernel/archive/master.zip \
 
 unzip ./environment/master.zip -d ./environment/ >>/tmp/provision-script.log 2>&1
 mv ./environment/qemu-rpi-kernel-master ./environment/qemu-rpi-kernel
+rm master.zip
 echo -e "${GREEN}Kernel-rpi: DONE${NOCOLOR}"
